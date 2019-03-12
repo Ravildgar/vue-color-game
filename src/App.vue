@@ -1,33 +1,19 @@
 <template>
   <div id="app">
-    <SelectableColor
-      backgroundColor="rgb(201, 76, 76)"
-      сorrectСolor="rgb(201, 76, 76)"
-      :key="'item.id'"
-    />
-    <SelectableColor
-      backgroundColor="rgb(231, 06, 76)"
-      сorrectСolor="rgb(201, 76, 76)"
-      :key="'item.id231'"
-    />
-    <SelectableColor
-      backgroundColor="rgb(1, 76, 76)"
-      сorrectСolor="rgb(201, 76, 76)"
-      :key="'item.i13d'"
-    />
     <HelloI18n/>
+    <FieldComponent/>
   </div>
 </template>
 
 <script>
 import HelloI18n from "./components/HelloI18n.vue";
-import SelectableColor from "./components/SelectableColor.vue";
+import FieldComponent from "./components/FieldComponent.vue";
 
 export default {
   name: "app",
   components: {
     HelloI18n,
-    SelectableColor
+    FieldComponent
   }
 };
 </script>
