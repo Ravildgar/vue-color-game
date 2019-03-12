@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <HelloI18n/>
-    <SliderRanged/>
-    <FieldComponent/>
+    <SliderRanged @inputData="updateNumberOfColors"/>
+    <FieldComponent :numberOfColors="childData"/>
   </div>
 </template>
 
@@ -17,6 +17,16 @@ export default {
     HelloI18n,
     SliderRanged,
     FieldComponent
+  },
+  data: function() {
+    return {
+      childData: 12
+    };
+  },
+  methods: {
+    updateNumberOfColors(variable) {
+      this.childData = Number(variable);
+    }
   }
 };
 </script>

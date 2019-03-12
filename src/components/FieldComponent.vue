@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{numberOfColors}}
     <SelectableColor
       backgroundColor="rgb(201, 76, 76)"
       сorrectСolor="rgb(201, 76, 76)"
@@ -19,7 +20,6 @@
 </template>
 
 <script>
-
 import SelectableColor from "./SelectableColor.vue";
 
 export default {
@@ -27,6 +27,10 @@ export default {
     SelectableColor
   },
   props: {
+    numberOfColors: {
+      type: Number,
+      default: 12
+    },
     сorrectСolor: {
       type: String,
       default: "rgb(201, 76, 76)"

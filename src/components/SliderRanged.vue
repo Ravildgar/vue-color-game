@@ -1,6 +1,6 @@
 <template>
   <div class="slidecontainer">
-    <input v-model="value" type="range" min="2" max="22" value="10" class="slider">
+    <input @input="submit" v-model="value" type="range" min="2" max="22" value="10" class="slider">
     <p v-if="value < 7">{{ $t('value') }} {{value}}. {{ $t('easy') }}</p>
     <p v-else-if="value < 15">{{ $t('value') }} {{value}}. {{ $t('middle') }}</p>
     <p v-else>{{ $t('value') }} {{value}}. {{ $t('hard') }}</p>
@@ -13,6 +13,11 @@ export default {
     return {
       value: 12
     };
+  },
+  methods: {
+    submit: function() {
+      this.$emit("inputData", this.value);
+    }
   }
 };
 </script>
