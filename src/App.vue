@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <HelloI18n/>
+    <PickColorBtn/>
     <SliderRanged @inputData="updateNumberOfColors"/>
     <FieldComponent :numberOfColors="childData"/>
   </div>
@@ -8,6 +9,7 @@
 
 <script>
 import HelloI18n from "./components/HelloI18n.vue";
+import PickColorBtn from "./components/PickColorBtn.vue";
 import SliderRanged from "./components/SliderRanged.vue";
 import FieldComponent from "./components/FieldComponent.vue";
 
@@ -15,6 +17,7 @@ export default {
   name: "app",
   components: {
     HelloI18n,
+    PickColorBtn,
     SliderRanged,
     FieldComponent
   },

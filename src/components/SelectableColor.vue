@@ -1,6 +1,6 @@
 <template>
   <div class="scene scene--card">
-    <div class="card" @click="giveAnswer" :class="{flipped: isClicked}">
+    <div class="card" @click.once="giveAnswer" :class="{flipped: isClicked}">
       <div class="card-face" :style="{ backgroundColor: backgroundColor }"></div>
       <div class="card-face card-face-back">
         <h1 v-if="isRightColor">{{$t("correctAnswer")}}</h1>
@@ -57,6 +57,7 @@ export default {
   border: 1px solid #ccc;
   margin: 40px 0;
   perspective: 600px;
+  display: inline-block;
 }
 .card {
   position: relative;
