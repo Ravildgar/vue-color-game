@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1>{{ numberOfCards }}</h1>
-    <button>New Color!</button>
+    <button @click="updateCards">New Color!</button>
   </div>
 </template>
 
@@ -10,6 +9,11 @@ export default {
   computed: {
     numberOfCards() {
       return this.$store.state.numberOfCards;
+    }
+  },
+  methods: {
+    updateCards: function() {
+      this.$store.commit("setGameOn")
     }
   }
 };

@@ -1,26 +1,20 @@
 <template>
   <div id="app">
-    <HelloI18n/>
     <ControlPanel/>
-    <PickColorBtn/>
     <SliderRanged/>
     <FieldComponent/>
   </div>
 </template>
 
 <script>
-import HelloI18n from "./components/HelloI18n.vue";
 import ControlPanel from "./components/ControlPanel.vue";
-import PickColorBtn from "./components/PickColorBtn.vue";
 import SliderRanged from "./components/SliderRanged.vue";
 import FieldComponent from "./components/FieldComponent.vue";
 
 export default {
   name: "app",
   components: {
-    HelloI18n,
     ControlPanel,
-    PickColorBtn,
     SliderRanged,
     FieldComponent
   }

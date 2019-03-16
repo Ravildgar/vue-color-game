@@ -1,5 +1,5 @@
 <template>
-  <div class="scene scene--card">
+  <div class="scene scene--card" v-if="isGameOn">
     <div class="card" @click.once="giveAnswer" :class="{flipped: isClicked}">
       <div class="card-face" :style="{ backgroundColor: backgroundColor }"></div>
       <div class="card-face card-face-back">
@@ -35,6 +35,9 @@ export default {
       } else {
         return false;
       }
+    },
+    isGameOn: function() {
+      return this.$store.state.isGameOn;
     }
   },
   methods: {
