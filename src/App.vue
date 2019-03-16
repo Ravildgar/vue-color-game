@@ -3,8 +3,8 @@
     <HelloI18n/>
     <ControlPanel/>
     <PickColorBtn/>
-    <SliderRanged @inputData="updateNumberOfColors"/>
-    <FieldComponent :numberOfColors="childData"/>
+    <SliderRanged/>
+    <FieldComponent/>
   </div>
 </template>
 
@@ -23,16 +23,6 @@ export default {
     PickColorBtn,
     SliderRanged,
     FieldComponent
-  },
-  data: function() {
-    return {
-      childData: 12
-    };
-  },
-  methods: {
-    updateNumberOfColors(variable) {
-      this.childData = Number(variable);
-    }
   }
 };
 </script>

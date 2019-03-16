@@ -1,22 +1,22 @@
 <template>
   <div class="slidecontainer">
-    <input @input="submit" v-model="value" type="range" min="2" max="12" value="10" class="slider">
-    <p v-if="value < 4">{{ $t('value') }} {{value}}. {{ $t('easy') }}</p>
-    <p v-else-if="value < 7">{{ $t('value') }} {{value}}. {{ $t('middle') }}</p>
-    <p v-else>{{ $t('value') }} {{value}}. {{ $t('hard') }}</p>
+    <input v-model="numberOfCards" type="range" min="2" max="12" class="slider">
+    <p v-if="numberOfCards < 4">{{ $t('value') }} {{numberOfCards}}. {{ $t('easy') }}</p>
+    <p v-else-if="numberOfCards < 7">{{ $t('value') }} {{numberOfCards}}. {{ $t('middle') }}</p>
+    <p v-else>{{ $t('value') }} {{numberOfCards}}. {{ $t('hard') }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  data: function() {
-    return {
-      value: 12
-    };
-  },
-  methods: {
-    submit: function() {
-      this.$emit("inputData", this.value);
+  computed: {
+    numberOfCards: {
+      get() {
+        return this.$store.state.numberOfCards;
+      },
+      set(value) {
+        this.$store.commit("updateNumberOfCards", value);
+      }
     }
   }
 };

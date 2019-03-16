@@ -16,9 +16,25 @@ export default {
   components: {
     SelectableColor
   },
-  props: {
-    numberOfColors: {
-      type: Number
+  computed: {
+    numberOfCards: function() {
+      return this.$store.state.numberOfCards;
+    },
+    generateRandomColors: function() {
+      //создаем array
+      let arr = [];
+      // добавляем num случайных цветов в array;
+      for (let i = 0; i < this.numberOfCards; i++) {
+        arr.push(this.randomColors());
+      }
+      //возвращаем array
+      return arr;
+    },
+    //генерируем array с num случайных цветов
+    pickColor: function() {
+      const random = Math.floor(Math.random() * this.numberOfCards);
+      this.$emit("pickColor", this.generateRandomColors[random]);
+      return this.generateRandomColors[random];
     }
   },
   data: function() {
@@ -38,24 +54,6 @@ export default {
 
       const rgb = "rgb(" + r + ", " + g + ", " + b + ")";
       return rgb;
-    }
-  },
-  computed: {
-    generateRandomColors: function() {
-      //создаем array
-      let arr = [];
-      // добавляем num случайных цветов в array;
-      for (let i = 0; i < this.numberOfColors; i++) {
-        arr.push(this.randomColors());
-      }
-      //возвращаем array
-      return arr;
-    },
-    //генерируем array с num случайных цветов
-    pickColor: function() {
-      const random = Math.floor(Math.random() * this.numberOfColors);
-      this.$emit("pickColor", this.generateRandomColors[random]);
-      return this.generateRandomColors[random];
     }
   }
 };
