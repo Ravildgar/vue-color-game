@@ -58,6 +58,7 @@ export default {
   margin: 40px 0;
   perspective: 600px;
   display: inline-block;
+  background: rgb(163, 151, 151);
 }
 .card {
   position: relative;

@@ -13,20 +13,12 @@
 import SelectableColor from "./SelectableColor.vue";
 
 export default {
-  // watch: {
-  //   numberOfColors: function() {
-  //     // watch it
-  //     this.generateRandomColors(this.numberOfColors);
-  //     this.pickColor(this.numberOfColors);
-  //   }
-  // },
   components: {
     SelectableColor
   },
   props: {
     numberOfColors: {
-      type: Number,
-      default: 12
+      type: Number
     }
   },
   data: function() {
@@ -62,6 +54,7 @@ export default {
     //генерируем array с num случайных цветов
     pickColor: function() {
       const random = Math.floor(Math.random() * this.numberOfColors);
+      this.$emit("pickColor", this.generateRandomColors[random]);
       return this.generateRandomColors[random];
     }
   }

@@ -1,8 +1,8 @@
 <template>
   <div class="slidecontainer">
-    <input @input="submit" v-model="value" type="range" min="2" max="22" value="10" class="slider">
-    <p v-if="value < 7">{{ $t('value') }} {{value}}. {{ $t('easy') }}</p>
-    <p v-else-if="value < 15">{{ $t('value') }} {{value}}. {{ $t('middle') }}</p>
+    <input @input="submit" v-model="value" type="range" min="2" max="12" value="10" class="slider">
+    <p v-if="value < 4">{{ $t('value') }} {{value}}. {{ $t('easy') }}</p>
+    <p v-else-if="value < 7">{{ $t('value') }} {{value}}. {{ $t('middle') }}</p>
     <p v-else>{{ $t('value') }} {{value}}. {{ $t('hard') }}</p>
   </div>
 </template>
